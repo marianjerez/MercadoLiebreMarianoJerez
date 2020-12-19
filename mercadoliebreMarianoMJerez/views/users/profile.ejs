@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+    <title>Perfil de usuario</title>
+</head>
+<body>
+    <%- include("../partials/navBar") %>
+
+    <h1 class="titulares">Perfil de usuario</h1>
+    <h1 class="titulares">Bienvenido<%= usuarioALoguear.email %></h1>
+
+    <button style="background-color:red; color: white;"><a href="/users/destroy/<%= usuarioALoguear.id %>">DAR DE BAJA</a></button>
+    <button style="background-color: white;"><a href="/users/cerrarsesion">CERRAR SESION</a></button>
+    <%- include("../partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head")  %>
+</head>
+<body id="body-login">
+
+    <%- include("partials/navBar") %>
+
+    <% if(typeof errors != 'undefined') { %>
+        <ul>
+            <% for(var i=0; i < errors.length; i++) { %>
+                <li style="color: red; font-size: 20px; margin: 25px;"> <%= errors[i].msg %> </li>
+            <% } %>
+        </ul>
+    <% } %>
+    <form action="/users/login" method="POST" id="form-login">
+        <!--EL METODO GET-POST DEBE CORRELACIONARSE CON EL METODO QUE USA EL SERVIDOR EN EL ARCHIVO INDEX-->
+        <div class="inputs-login">
+            <input type="email" name="email" id="input-login-1" placeholder="Nombre de usuario">
+            <input type="password" name="password" id="input-login-2" placeholder="Elegi tu contraseña">
+            <label for="recordame">Recordarme</label>
+            <input type="checkbox" name="recordame">
+            <input type="submit" id="submit-login" value="Enviar">
+        </div>
+    </form>
+
+    <!--FOOTER-->
+    <%- include("partials/footer") %>
+</body>
+</html>

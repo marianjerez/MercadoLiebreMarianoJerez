@@ -1,0 +1,17 @@
+    <% for(var i=0; i < products.length; i++) {%>
+        <% if(products[i].category=='in-sale') {%> 
+            <a href="/products/<%= products[i].id %>">
+                <article class="on-sale">       
+                    <img src="/images/<%=products[i].image%>" alt="<%=products[i].image%>" class="img-producto">
+                    <div class="una-caja">
+                        <i class="fas fa-truck" id="iconito-verde"></i>                        
+                            <div class="parrafo-articulo">
+                                <p class="precios">$<%= products[i].price %></p>
+                                <p class="descuentos"><%= products[i].discount %>% off</p>
+                            </div>
+                        <h2 class="article-description"><%= products[i].description %></h2>
+                    </div>
+                </article>
+            </a>
+        <% }; %>
+    <% }; %>

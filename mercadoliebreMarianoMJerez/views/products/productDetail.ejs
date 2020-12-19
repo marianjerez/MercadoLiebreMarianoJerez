@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head")  %>
+    <title>Detalle de producto!</title>
+</head>
+<body>
+    <!--BARRA DE NAVEGACION-->
+    <%- include("../partials/navBar") %>
+
+    <h1 class="titulares">Detalle de producto:</h1>
+        <% if(product) {%>
+            <img src="/images/<%=product.image%>" alt="<%=product.image%>" class="img-producto">
+            <div class="una-caja">
+                <i class="fas fa-truck" id="iconito-verde"></i>                   
+                    <div class="parrafo-articulo">
+                        <p class="precios"><%= product.price %></p>
+                        <p class="descuentos"><%= product.discount %> % off</p>
+                    </div>       
+                <h2 class="article-description"><%= product.description %></h2>
+            </div>
+        <% } else{ %>
+            <h1 class="titulares">No existe ese producto!</h1>
+            <% }; %>
+            <!-- BOTONES DE CREAR Y BORRAR-->
+            <a href="/products/create"><button style="background-color: white;">CREAR</button></a>
+            <a href="/products/destroy/<%=product.id %>"><button style="background-color: white;">BORRAR</button></a>
+
+    <!--FOOTER-->
+    <%- include("../partials/footer") %>
+</body>
+</html>

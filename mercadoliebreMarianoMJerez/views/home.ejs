@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head")  %>
+</head>
+<body>
+    <!--BARRA DE NAVEGACION-->
+    <%- include("partials/navBar") %>
+
+    <div class="banner">
+        <img src="/images/img-home-banner.jpg" alt="img-home-banner" class="img-producto">
+    </div>
+
+    <!--CUERPO-->
+    <main class="main-home">
+        <h1 class="titulares">Basado en tu ultima visita </h1>
+        <section class="partials-home">
+            <%-include("partials/visited")%>
+        </section>
+        <h1 class="titulares">Ofertas </h1>
+        <section class="partials-home">
+        <%- include("partials/in-sale")%>
+        </section>
+    </main>
+    
+    <!--FOOTER-->
+    <%- include("partials/footer") %>
+</body>
+</html>

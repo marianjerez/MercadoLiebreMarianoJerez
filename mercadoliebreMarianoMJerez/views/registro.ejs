@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head")  %>
+</head>
+<body>
+    <!--BARRA DE NAVEGACION-->
+    <%- include("partials/navBar") %>
+
+    <% if(typeof errors != 'undefined') { %>
+        <ul>
+            <% for(var i=0; i < errors.length; i++) { %>
+                <li style="color: red; font-size: 20px; margin: 25px;"> <%= errors[i].msg %> </li>
+            <% } %>
+        </ul>
+    <% } %>
+
+    <form action="/users/register" method="POST" id="form-registro" enctype="multipart/form-data">
+        <div class="inputs-registro">
+            <input type="text" name="nombre" id="nombre" class="input" placeholder="Nombre y apellido">
+            <input type="text" name="id" id="nombre de usuario" class="input" placeholder="Nombre de usuario">
+            <input type="email" name="email" id="email" class="input" placeholder="E-mail">
+            <label for="date">Fecha de nacimiento</label>
+            <input type="date" name="fecha" class="input" id="fecha">
+            <input type="text" name="domicilio" id="domicilio" placeholder="Domicilio">
+        </div>
+
+        <div class="container-registro">
+            <h2>Perfil del usuario</h2><br>
+            <div class="perfil-del-usuario">
+                <input type="radio" name="perfilusuario" id="Comprador" value="Comprador">
+                <label for="Comprador">Comprador</label>
+                <input type="radio" name="perfilusuario" id="Vendedor" value="Vendedor">
+                <label for="Vendedor">Vendedor</label>
+            </div>
+
+            <br><h2>Intereses</h2><br>
+            <div class="intereses">
+                <div class="individual-checkbox">
+                    <input type="checkbox" name="intereses" id="electro" value="Electro">
+                    <label for="electro">Electro</label>
+                </div>
+                <div class="individual-checkbox">
+                    <input type="checkbox" name="intereses" id="moda" value="Moda">
+                    <label for="moda">Moda</label>
+                </div>
+                <div class="individual-checkbox">
+                    <input type="checkbox" name="intereses" id="hogar" value="Hogar">
+                    <label for="hogar">Moda</label>
+                </div>
+                <div class="individual-checkbox">
+                    <input type="checkbox" name="intereses" id="jugueteria" value="Jugueteria">
+                    <label for="jugueteria">Jugueteria</label>
+                </div>
+                <div class="individual-checkbox" id="ultimo-checkbox">
+                    <input type="checkbox" name="intereses" id="vida sana" value="Vida sana">
+                    <label for="vidasana">Vida sana</label>
+                </div>
+            </div>
+
+            <br><h2>Elegi tu foto de usuario</h2><br>
+            <div class="foto-usuario">
+                <input type="file" name="fotousuario" id="foto-usuario" value="Seleccionar archivo">
+                <label for="foto-usuario">No se eligio archivo</label>
+            </div>
+        </div>
+
+        <div class="inputs-registro">
+            <input type="password" name="password" class="input" placeholder="Elegi tu contraseña">
+            <input type="password" name="repassword" class="input" placeholder="Confirma tu contraseña">
+            <button type="submit" class="input" id="enviar-registro" >Enviar<button>
+            <button type="submit" class="input" id="borrar-registro" >Borrar<button>
+        </div>
+    </form>
+
+        <!--FOOTER-->
+        <%- include("partials/footer") %>
+</body>
+</html>

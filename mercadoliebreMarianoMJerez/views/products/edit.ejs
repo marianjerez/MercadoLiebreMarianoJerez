@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+    <title>Edicion producto</title>
+</head>
+<body>
+    <%- include("../partials/navBar") %>
+
+    <!-- RUTA DINAMICA EN ACTION-->
+    <form action="/products/edit/<%=product.id%>" method="POST" enctype="multipart/form-data">
+        <h1>Producto #<%= product.name %></h1>
+        <br>
+        name:
+        <input type="text" name="name" value="<%= product.name %>">
+        <br>
+        description:
+        <input type="text" name="description" value="<%= product.description %>">
+        <br>
+        price:
+        <input type="text" name="price" value="<%= product.price %>">
+        <br>
+        discount:
+        <input type="text" name="discount" value="<%= product.discount %>">
+        <br>
+        image:
+        <!--set multer at routes-->
+        <input type="file" name="image" value="<%= product.image %>">
+        <br>
+        category:
+        <input type="text" name="category" value="<%= product.category %>">
+        <br>
+        <button type="submit">Editar!</button>
+    </form>
+
+    <%- include("../partials/footer") %>
+</body>
+</html>
